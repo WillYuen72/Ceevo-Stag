@@ -1,9 +1,9 @@
 {
     "name": "Ceevo Stag",
-    "marketplaceName": {"de":"Ceevo Stag Zahlungs Prüfung","en":"Ceevo Payment stag"},
-    "namespace": "CvpaStag",
-    "type": "payment",  
-    "version": "1.2.1",
+    "marketplaceName": {"de":"Ceevo Stag Will Test","en":"Ceevo Payment stag"},
+    "namespace": "Ceevo",
+    "type": "payment",
+    "version": "1.2.2",
     "license": "Copyright by Ceevo AG",
     "isClosedSource": true,
     "pluginIcon": "icon_plugin_xs.png",
@@ -14,19 +14,19 @@
     "keywords": ["ceevo", "official", "plentymarkets", "payment"],
     "author": "Ceevo AG",
     "authorIcon": "icon_author_xs.png",
-    "email": "tobias.eilers@ceevo.com",
-    "phone": "+49 8151 18759-0",
-    "serviceProvider": "CvpaStag\\Providers\\CvpaStagServiceProvider",
+    "email": "tobias.will@ceevo.com",
+    "phone": "+49 8151 18769-0",
+    "serviceProvider": "Ceevo\\Providers\\CeevoServiceProvider",
     "containers": [],
     "dataProviders"         :
     [
         {
-            "key"           :"CvpaStag\\Containers\\CvpaStagErrorContainer",
+            "key"           :"Ceevo\\Containers\\CeevoErrorContainer",
             "name"          :"Error Messages",
             "description"   :"Display a error message in checkout"
         },
         {
-            "key"           :"CvpaStag\\Providers\\IconProvider",
+            "key"           :"Ceevo\\Providers\\IconProvider",
             "name"          :"CeevoPayment icon",
             "description"   :"Display the icon for this payment method"
         }
