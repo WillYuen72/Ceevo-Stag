@@ -1,0 +1,32 @@
+{
+    "name": "Ceevo Stag",
+    "marketplaceName": {"de":"Ceevo Stag Zahlungsmodul","en":"Ceevo Stag Paymentmodule"},
+    "namespace": "Mapa",
+    "type": "payment",  
+    "version": "1.2.1",
+    "license": "Copyright by Ceevo Stag AG",
+    "isClosedSource": true,
+    "pluginIcon": "icon_plugin_xs.png",
+    "price": 0.00,
+    "description": "Ceevo Stag plugin for plentymarkets",
+    "shortDescription": {"de":"Ceevo Stag plugin für plentymarkets","en":"Ceevo Stag plugin for plentymarkets"},
+    "categories":["3519"],
+    "keywords": ["Ceevo Stag", "official", "plentymarkets", "payment"],
+    "author": "Ceevo Stag AG",
+    "authorIcon": "icon_author_xs.png",
+    "email": "tobias.eilers@Ceevo Stag.com",
+    "phone": "+49 8151 18759-0",
+    "serviceProvider": "Mapa\\Providers\\MapaServiceProvider",
+    "containers": [],
+    "dataProviders"         :
+    [
+        {
+            "key"           :"Mapa\\Containers\\MapaErrorContainer",
+            "name"          :"Error Messages",
+            "description"   :"Display a error message in checkout"
+        }
+    ],
+    "javaScriptFiles": [],
+    "require": [],
+    "dependencies":[]
+}
