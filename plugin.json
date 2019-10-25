@@ -1,29 +1,34 @@
 {
     "name": "Ceevo Stag",
-    "marketplaceName": {"de":"Ceevo Stag Zahlungsmodul","en":"Ceevo Stag Paymentmodule"},
-    "namespace": "Mapa",
-    "type": "payment",
+    "marketplaceName": {"de":"Ceevo Zahlungs Prüfung","en":"Ceevo Payment stag"},
+    "namespace": "CvpaStag",
+    "type": "payment",  
     "version": "1.2.1",
-    "license": "Copyright by Ceevo Stag AG",
+    "license": "Copyright by Ceevo AG",
     "isClosedSource": true,
     "pluginIcon": "icon_plugin_xs.png",
     "price": 0.00,
-    "description": "Ceevo Stag plugin for plentymarkets",
-    "shortDescription": {"de":"Ceevo Stag plugin für plentymarkets","en":"Ceevo Stag plugin for plentymarkets"},
+    "description": "Ceevo plugin for plentymarkets",
+    "shortDescription": {"de":"Ceevo plugin für plentymarkets","en":"Ceevo plugin for plentymarkets"},
     "categories":["3519"],
-    "keywords": ["Ceevo Stag", "official", "plentymarkets", "payment"],
-    "author": "Ceevo Stag AG",
+    "keywords": ["ceevo", "official", "stag", "payment"],
+    "author": "Ceevo AG",
     "authorIcon": "icon_author_xs.png",
-    "email": "tobias.eilers@Ceevo Stag.com",
+    "email": "tobias.eilers@ceevo.com",
     "phone": "+49 8151 18759-0",
-    "serviceProvider": "Mapa\\Providers\\MapaServiceProvider",
+    "serviceProvider": "CvpaStag\\Providers\\CvpaStagServiceProvider",
     "containers": [],
     "dataProviders"         :
     [
         {
-            "key"           :"Mapa\\Containers\\MapaErrorContainer",
+            "key"           :"CvpaStag\\Containers\\CvpaStagErrorContainer",
             "name"          :"Error Messages",
             "description"   :"Display a error message in checkout"
+        },
+        {
+            "key"           :"CvpaStag\\Providers\\IconProvider",
+            "name"          :"CeevoPayment icon",
+            "description"   :"Display the icon for this payment method"
         }
     ],
     "javaScriptFiles": [],
