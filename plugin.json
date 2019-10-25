@@ -2,7 +2,7 @@
     "name": "Ceevo Stag",
     "marketplaceName": {"de":"Ceevo Stag Zahlungsmodul","en":"Ceevo Stag Paymentmodule"},
     "namespace": "Mapa",
-    "type": "payment",  
+    "type": "payment",
     "version": "1.2.1",
     "license": "Copyright by Ceevo Stag AG",
     "isClosedSource": true,

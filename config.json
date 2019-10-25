@@ -383,6 +383,53 @@
                }
             }
          }
-      }
+      },
+      "Config.CeevoTab":{
+         "label":"Config.iDealTab",
+         "formFields":{
+            "status_ceevo":{
+               "type":"selectBox",
+               "required":false,
+               "label":"Config.statusCeevoLabel",
+               "options":{
+                  "defaultValue":"0",
+                  "selectBoxValues":[
+                     {
+                        "value":"0",
+                        "caption":"Config.statusCeevoPossibleValue0"
+                     },
+                     {
+                        "value":"1",
+                        "caption":"Config.statusCeevoPossibleValue1"
+                     }
+                  ]
+               }
+            },
+            "name_ceevo":{
+               "type":"inputText",
+               "required":false,
+               "label":"Config.nameCeevoLabel",
+               "options":{
+                  "defaultValue":"iDeal"
+               }
+            },
+            "desc_ceevo":{
+               "type":"inputText",
+               "required":false,
+               "label":"Config.descCeevoLabel",
+               "options":{
+                  "defaultValue":""
+               }
+            },
+            "channel_ceevo":{
+               "type":"inputText",
+               "required":false,
+               "label":"Config.channelCeevoLabel",
+               "options":{
+                  "defaultValue":"ff8080813f5bac85013f76235b981b79"
+               }
+            }
+         }
+      },
    }
 }
