@@ -1,11 +1,11 @@
 <?php
-namespace Mapa\Helper;
+namespace Will\Helper;
 
 use Plenty\Plugin\ConfigRepository;
 
 /**
  * Class PayCore
- * @package Mapa\Helper
+ * @package Will\Helper
  */
 class PayCore
 {

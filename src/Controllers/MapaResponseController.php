@@ -1,6 +1,6 @@
 <?php
 
-namespace Mapa\Controllers;
+namespace Will\Controllers;
 
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
@@ -13,12 +13,12 @@ use Plenty\Modules\Payment\Models\Payment;
 use Plenty\Modules\Order\Models\Order;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Templates\Twig;
-use Mapa\Helper\PaymentHelper;
-use Mapa\Services\SessionStorageService;
+use Will\Helper\PaymentHelper;
+use Will\Services\SessionStorageService;
 use Plenty\Plugin\Log\Loggable;
 
 
-class MapaResponseController extends Controller
+class WillResponseController extends Controller
 {
     use Loggable;
 
@@ -70,7 +70,7 @@ class MapaResponseController extends Controller
      * @param PaymentHelper $paymentHelper
      * @param SessionStorageService $sessionStorage
      * @param OrderRepositoryContract $orderRepo
-     * @param \Mapa\Controllers\ConfigRepository $config
+     * @param \Will\Controllers\ConfigRepository $config
      */
     public function __construct(Request $request,
                                 Response $response,
@@ -108,7 +108,7 @@ class MapaResponseController extends Controller
     {
       $sender = $this->config->get('Masterpayment.security_sender');
       $chksum = md5($_GET['trxid'].$_GET['uniqueid'].$sender);
-      $this->getLogger('MapaResponseController_checkoutSuccess')->info('data', ['get' => $_GET, 'sender' => $sender, 'chksum' => $chksum]);
+      $this->getLogger('WillResponseController_checkoutSuccess')->info('data', ['get' => $_GET, 'sender' => $sender, 'chksum' => $chksum]);
       if ($_GET['chksum'] != $chksum){
         return $this->response->redirectTo('checkout');
       }
@@ -130,7 +130,7 @@ class MapaResponseController extends Controller
           $data[$t[0]] = $t[1];
         }
         
-        $this->getLogger('MapaResponseController_handleResponse')->info('post', ['data' => $data]);
+        $this->getLogger('WillResponseController_handleResponse')->info('post', ['data' => $data]);
         
         if ($data['PROCESSING.RESULT'] != 'ACK'){
           return urldecode($data['CRITERION.FAILURL'].'?ps='.$data['PROCESSING.STATUS'].'&pr='.$data['PROCESSING.RETURN']);

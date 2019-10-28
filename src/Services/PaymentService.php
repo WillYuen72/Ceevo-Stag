@@ -1,6 +1,6 @@
 <?php //strict
 
-namespace Mapa\Services;
+namespace Will\Services;
 
 use Plenty\Modules\Basket\Models\BasketItem;
 use Plenty\Modules\Payment\Contracts\PaymentRepositoryContract;
@@ -14,12 +14,12 @@ use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\Order\Models\Order;
 use Plenty\Modules\Order\Contracts\OrderRepositoryContract;
 
-use Mapa\Helper\PaymentHelper;
-use Mapa\Helper\PayCore;
-use Mapa\Services\SessionStorageService;
+use Will\Helper\PaymentHelper;
+use Will\Helper\PayCore;
+use Will\Services\SessionStorageService;
 
 /**
- * @package Mapa\Services
+ * @package Will\Services
  */
 class PaymentService
 {
@@ -254,7 +254,7 @@ class PaymentService
         $requestParams['country'] = $country;
         $requestParams['countryDetails'] = $countryRepo->getCountryById($basket->shippingCountryId);
         
-        //$payCore = pluginApp(Mapa\Helper\PayCore::class);
+        //$payCore = pluginApp(Will\Helper\PayCore::class);
         $payCore = $this->payCore;
         $orderId = $basket->id;
         $amount = $basket->basketAmount;
@@ -287,8 +287,8 @@ class PaymentService
           'USER_PWD'            => $requestParams['USER.PASSWORD'],
           'TRANSACTION_CHANNEL' => $this->config->get('Masterpayment.channel_'.$selectedPaymethod),
           'TRANSACTION_MODE'    => $requestParams['TRANSACTION.MODE'],
-          'STYLE_URL'           => $domain.'/payment/mapa/style',
-          'RESPONSE_URL'        => $domain.'/payment/mapa/response',
+          'STYLE_URL'           => $domain.'/payment/Will/style',
+          'RESPONSE_URL'        => $domain.'/payment/Will/response',
         );
         $conf['STYLE_URL'] = 'https://mp-gate.com/rs/v1/css/default_style.css'; // default style
         $userData = array(
@@ -311,8 +311,8 @@ class PaymentService
         $requestParams['REQUEST'] = $payCore->prepareData($orderId, $amount, $currency, $conf, $userData);
         $requestParams['REQUEST']['CRITERION.MOPID'] = $mopID;
         $requestParams['REQUEST']['CRITERION.PM'] = $selectedPaymethod;
-        $requestParams['REQUEST']['CRITERION.FAILURL'] = $domain.'/payment/mapa/checkout_failure';
-        $requestParams['REQUEST']['CRITERION.SUCCESSURL'] = $domain.'/payment/mapa/checkout_success';
+        $requestParams['REQUEST']['CRITERION.FAILURL'] = $domain.'/payment/Will/checkout_failure';
+        $requestParams['REQUEST']['CRITERION.SUCCESSURL'] = $domain.'/payment/Will/checkout_success';
         $requestParams['REQUEST']['CRITERION.PLACEURL'] = $domain.'/place-order';
         $requestParams['REQUEST']['CRITERION.RESPONSEURL'] = $conf['RESPONSE_URL'];
         $i=1;

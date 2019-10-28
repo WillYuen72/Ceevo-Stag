@@ -1,12 +1,12 @@
 <?php //strict
 
-namespace Mapa\Services;
+namespace Will\Services;
 
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 
 /**
  * Class SessionStorageService
- * @package Mapa\Services
+ * @package Will\Services
  */
 class SessionStorageService
 {

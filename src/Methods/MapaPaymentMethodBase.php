@@ -1,6 +1,6 @@
 <?php // strict
 
-namespace Mapa\Methods;
+namespace Will\Methods;
 
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
@@ -10,10 +10,10 @@ use Plenty\Plugin\Log\Loggable;
 use Plenty\Plugin\Application;
 
 /**
- * Class MapaPaymentMethod
- * @package Mapa\Methods
+ * Class WillPaymentMethod
+ * @package Will\Methods
  */
-class MapaPaymentMethodBase extends PaymentMethodService
+class WillPaymentMethodBase extends PaymentMethodService
 {
     use Loggable;
     /**
@@ -69,10 +69,10 @@ class MapaPaymentMethodBase extends PaymentMethodService
     {
       /*
       $this
-        ->getLogger('MapaPaymentMethodBase::isActive')
+        ->getLogger('WillPaymentMethodBase::isActive')
          //->setReferenceType('this')
          //->setReferenceValue($this)
-        ->info('MapaPaymentMethod', [
+        ->info('WillPaymentMethod', [
           'this' => $this,
           'name_' => $this->configRepo->get('Masterpayment.name_'.strtolower($this->type)), 
           'status_' => $this->configRepo->get('Masterpayment.status_'.strtolower($this->type)),
@@ -93,7 +93,7 @@ class MapaPaymentMethodBase extends PaymentMethodService
       $name = $this->configRepo->get('Masterpayment.name_'.strtolower($this->type));
       if(!strlen($name))
       {
-          $name = 'Mapa '.strtoupper($this->type);
+          $name = 'Will '.strtoupper($this->type);
       }
       return $name;
     }

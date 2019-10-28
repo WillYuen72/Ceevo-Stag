@@ -1,12 +1,12 @@
 <?php
 
-namespace Mapa\Containers;
+namespace Will\Containers;
  
 use Plenty\Plugin\Templates\Twig;
 
-use Mapa\Services\SessionStorageService;
+use Will\Services\SessionStorageService;
  
-class MapaErrorContainer
+class WillErrorContainer
 {
     /**
      * @var SessionStorageService
@@ -21,7 +21,7 @@ class MapaErrorContainer
           $errorMSG = $status.': '.$result;
           $sessionStorage->setSessionValue('lastPS', NULL);
           $sessionStorage->setSessionValue('lastPR', NULL);
-          return $twig->render('Masterpayment::content.error', ['errorText' => $errorMSG]);
+          return $twig->render('WillYuan::content.error', ['errorText' => $errorMSG]);
         } else {
           return '';
         }

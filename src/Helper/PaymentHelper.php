@@ -1,6 +1,6 @@
 <?php //strict
 
-namespace Mapa\Helper;
+namespace Will\Helper;
 
 use Plenty\Modules\Payment\Models\PaymentProperty;
 use Plenty\Plugin\ConfigRepository;
@@ -13,11 +13,11 @@ use Plenty\Modules\Payment\Models\Payment;
 use Plenty\Modules\Order\Models\Order;
 use Plenty\Plugin\Log\Loggable;
 
-use Mapa\Services\SessionStorageService;
+use Will\Services\SessionStorageService;
 
 /**
  * Class PaymentHelper
- * @package Mapa\Helper
+ * @package Will\Helper
  */
 class PaymentHelper
 {
@@ -91,8 +91,8 @@ class PaymentHelper
         // Check whether the ID of the Pay upon pickup payment method has been created
         if($this->getPaymentMethod($paymethod) == 'no_paymentmethod_found')
         {
-            $paymentMethodData = array( 'pluginKey'   => 'mapa',
-                                        'paymentKey'  => 'MAPA'.$paymethod,
+            $paymentMethodData = array( 'pluginKey'   => 'Will',
+                                        'paymentKey'  => 'Will'.$paymethod,
                                         'name'        => 'Masterpayment '.$payname);
  
             $this->paymentMethodRepository->createPaymentMethod($paymentMethodData);
@@ -108,13 +108,13 @@ class PaymentHelper
      */
     public function getPaymentMethod($paymethod)
     {
-        $paymentMethods = $this->paymentMethodRepository->allForPlugin('mapa');
+        $paymentMethods = $this->paymentMethodRepository->allForPlugin('Will');
  
         if( !is_null($paymentMethods) )
         {
             foreach($paymentMethods as $paymentMethod)
             {
-                if($paymentMethod->paymentKey == 'MAPA'.$paymethod)
+                if($paymentMethod->paymentKey == 'Will'.$paymethod)
                 {
                     return $paymentMethod->id;
                 }

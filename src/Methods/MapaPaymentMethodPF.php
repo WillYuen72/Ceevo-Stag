@@ -1,19 +1,19 @@
 <?php // strict
 
-namespace Mapa\Methods;
+namespace Will\Methods;
 
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Plugin\ConfigRepository;
 
-use Mapa\Methods\MapaPaymentMethodBase;
+use Will\Methods\WillPaymentMethodBase;
 
 /**
- * Class MapaPaymentMethod
- * @package Mapa\Methods
+ * Class WillPaymentMethod
+ * @package Will\Methods
  */
-class MapaPaymentMethodPF extends MapaPaymentMethodBase
+class WillPaymentMethodPF extends WillPaymentMethodBase
 {
   var $type = 'PF';
 }

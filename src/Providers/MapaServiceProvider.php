@@ -1,6 +1,6 @@
 <?php // strict
 
-namespace Mapa\Providers;
+namespace Will\Providers;
 
 use Plenty\Modules\EventProcedures\Services\Entries\ProcedureEntry;
 use Plenty\Modules\EventProcedures\Services\EventProceduresService;
@@ -17,24 +17,24 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Log\Loggable;
 
-use Mapa\Services\PaymentService;
-use Mapa\Helper\PaymentHelper;
-use Mapa\Methods\MapaPaymentMethodBase;
-use Mapa\Methods\MapaPaymentMethodCC;
-use Mapa\Methods\MapaPaymentMethodDC;
-use Mapa\Methods\MapaPaymentMethodDD;
-use Mapa\Methods\MapaPaymentMethodOTSU;
-use Mapa\Methods\MapaPaymentMethodOTGP;
-use Mapa\Methods\MapaPaymentMethodOTIDL;
-use Mapa\Methods\MapaPaymentMethodPF;
-use Mapa\Methods\MapaPaymentMethodPP;
-use Mapa\Methods\MapaPaymentMethodCEEVO;
+use Will\Services\PaymentService;
+use Will\Helper\PaymentHelper;
+use Will\Methods\WillPaymentMethodBase;
+use Will\Methods\WillPaymentMethodCC;
+use Will\Methods\WillPaymentMethodDC;
+use Will\Methods\WillPaymentMethodDD;
+use Will\Methods\WillPaymentMethodOTSU;
+use Will\Methods\WillPaymentMethodOTGP;
+use Will\Methods\WillPaymentMethodOTIDL;
+use Will\Methods\WillPaymentMethodPF;
+use Will\Methods\WillPaymentMethodPP;
+use Will\Methods\WillPaymentMethodCEEVO;
 
 /**
- * Class MapaServiceProvider
- * @package Mapa\Providers
+ * Class WillServiceProvider
+ * @package Will\Providers
  */
-class MapaServiceProvider extends ServiceProvider
+class WillServiceProvider extends ServiceProvider
 {
   use Loggable;
   var $availablePayments = array(
@@ -55,7 +55,7 @@ class MapaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-      $this->getApplication()->register(MapaRouteServiceProvider::class);
+      $this->getApplication()->register(WillRouteServiceProvider::class);
       //$this->getApplication()->bind(RefundEventProcedure::class);
     }
     
@@ -80,8 +80,8 @@ class MapaServiceProvider extends ServiceProvider
         // Create the ID of the payment method if it doesn't exist yet
         $paymentHelper->createMopIfNotExists($k, $v);
     
-        $regName = 'mapa::MAPA'.$k;
-        $className = 'Mapa\Methods\MapaPaymentMethod'.$k; 
+        $regName = 'Will::Will'.$k;
+        $className = 'Will\Methods\WillPaymentMethod'.$k; 
         // Register the payment method in the payment method container
         $payContainer->register($regName, $className, [ AfterBasketChanged::class, AfterBasketItemAdd::class, AfterBasketCreate::class ]);
       }
@@ -110,10 +110,10 @@ class MapaServiceProvider extends ServiceProvider
                 $event->setType('htmlContent');
                 
                 $this
-                  ->getLogger('MapaServiceProvider::boot::GetPaymentMethodContent')
+                  ->getLogger('WillServiceProvider::boot::GetPaymentMethodContent')
                   //->setReferenceType('this')
                   //->setReferenceValue($this)
-                  ->info('MapaServiceProvider', [
+                  ->info('WillServiceProvider', [
                     'this' => $this,
                     'basket' => $basket, 
                   ]);
@@ -138,10 +138,10 @@ class MapaServiceProvider extends ServiceProvider
                 $paymentRes = $paymentService->executePayment($event->getOrderId(), $selectedPaymethod, $selectedMopID);
                 
                 $this
-                  ->getLogger('MapaServiceProvider::boot::ExecutePayment')
+                  ->getLogger('WillServiceProvider::boot::ExecutePayment')
                   //->setReferenceType('this')
                   //->setReferenceValue($this)
-                  ->info('MapaServiceProvider', [
+                  ->info('WillServiceProvider', [
                     'this' => $this,
                     'getOrderId' => $event->getOrderId(),
                     'selectedPaymethod' => $selectedPaymethod, 
