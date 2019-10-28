@@ -1,33 +1,33 @@
 {
-    "name": "Ceevo Stag",
+    "name": "Will Yuan",
     "marketplaceName": {"de":"Ceevo Stag Will Test","en":"Ceevo Payment stag"},
-    "namespace": "Ceevo",
+    "namespace": "WillYuan",
     "type": "payment",
     "version": "1.2.2",
     "license": "Copyright by Ceevo AG",
     "isClosedSource": true,
     "pluginIcon": "icon_plugin_xs.png",
     "price": 0.00,
-    "description": "Ceevo plugin for plentymarkets",
+    "description": "WillYuan plugin for plentymarkets",
     "shortDescription": {"de":"Ceevo plugin für plentymarkets","en":"Ceevo plugin for plentymarkets"},
     "categories":["3520"],
     "keywords": ["ceevo", "official", "plentymarkets", "payment"],
-    "author": "Ceevo AG",
+    "author": "WillYuen AG",
     "authorIcon": "icon_author_xs.png",
-    "email": "tobias.will@ceevo.com",
+    "email": "will@yuan.com",
     "phone": "+49 8151 18769-0",
-    "serviceProvider": "Ceevo\\Providers\\CeevoServiceProvider",
+    "serviceProvider": "WillYuan\\Providers\\CeevoServiceProvider",
     "containers": [],
     "dataProviders"         :
     [
         {
-            "key"           :"Ceevo\\Containers\\CeevoErrorContainer",
+            "key"           :"WillYuan\\Containers\\CeevoErrorContainer",
             "name"          :"Error Messages",
             "description"   :"Display a error message in checkout"
         },
         {
-            "key"           :"Ceevo\\Providers\\IconProvider",
-            "name"          :"CeevoPayment icon",
+            "key"           :"WillYuan\\Providers\\IconProvider",
+            "name"          :"WillYuan icon",
             "description"   :"Display the icon for this payment method"
         }
     ],

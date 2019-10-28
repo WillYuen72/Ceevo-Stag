@@ -30,9 +30,7 @@ class MapaPaymentMethodBase extends PaymentMethodService
      * @var ConfigRepository
      */
     private $configRepo;
-    
     var $type = 'N.A.';
-    
     var $icons = array(
       'CC'    => 'cc.png',
       'DC'    => 'dc.png',
@@ -60,7 +58,6 @@ class MapaPaymentMethodBase extends PaymentMethodService
         $this->basketRepo     = $basketRepo;
         $this->contactRepo    = $contactRepo;
         $this->configRepo     = $configRepo;
-        
     }
 
     /**
@@ -72,15 +69,15 @@ class MapaPaymentMethodBase extends PaymentMethodService
     {
       /*
       $this
-         ->getLogger('MapaPaymentMethodBase::isActive')
+        ->getLogger('MapaPaymentMethodBase::isActive')
          //->setReferenceType('this')
          //->setReferenceValue($this)
-         ->info('MapaPaymentMethod', [
-           'this' => $this,
-           'name_' => $this->configRepo->get('Masterpayment.name_'.strtolower($this->type)), 
-           'status_' => $this->configRepo->get('Masterpayment.status_'.strtolower($this->type)),
-           'channel_' => $this->configRepo->get('Masterpayment.channel_'.strtolower($this->type)),
-         ]);
+        ->info('MapaPaymentMethod', [
+          'this' => $this,
+          'name_' => $this->configRepo->get('Masterpayment.name_'.strtolower($this->type)), 
+          'status_' => $this->configRepo->get('Masterpayment.status_'.strtolower($this->type)),
+          'channel_' => $this->configRepo->get('Masterpayment.channel_'.strtolower($this->type)),
+        ]);
        */
       if (!empty($this->configRepo->get('Masterpayment.status_'.strtolower($this->type)))) return true;
       return false;
@@ -109,12 +106,10 @@ class MapaPaymentMethodBase extends PaymentMethodService
      */
     public function getIcon()
     {
-        
           $app = pluginApp(Application::class);
         $icon = $app->getUrlPath('masterpayment').'/images/'.$this->icons[$this->type];
 
         return $icon;
-        
     }
 
     /**

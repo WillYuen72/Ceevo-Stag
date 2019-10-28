@@ -350,11 +350,9 @@ class PaymentService
           'parse_result' => $res, 
           'this' => $this,
         ]);
-      
       $iframeURL = 'about:blank';
       if ($res['result'] == 'ACK'){
         $iframeURL = $res['url'];
-       
         $content = '<center><iframe src="'.$iframeURL.'" frameborder="0" width="80%" height="500"></iframe></center>';
       } else {
         $content = '<h3 style="color: red">ERROR: '.$res['all']['PROCESSING.RETURN'].'</h3>';
