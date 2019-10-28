@@ -21,7 +21,7 @@ class WillErrorContainer
           $errorMSG = $status.': '.$result;
           $sessionStorage->setSessionValue('lastPS', NULL);
           $sessionStorage->setSessionValue('lastPR', NULL);
-          return $twig->render('WillYuan::content.error', ['errorText' => $errorMSG]);
+          return $twig->render('Will::content.error', ['errorText' => $errorMSG]);
         } else {
           return '';
         }
