@@ -1,6 +1,6 @@
-# Masterpayment - Accept payments and optimise working capital 
+# Will - Accept payments and optimise working capital 
 
-Masterpayment provides payment processing for ecommerce shops.
+Will provides payment processing for ecommerce shops.
 As a member of the Net1 Group, we accept and process all current payment methods for your ecommerce shop with our own acquiring solution.
 
 We combine the core capabilities of an acquirer with those of a payment service provider and the preliminary financing opportunities of a bank in order to optimise your working capital.
@@ -9,26 +9,26 @@ With the plentymarkets plugin you are able to use these paymethods: Creditcard, 
 
 ## Opening a account
 
-You need to [become a client](http://masterpayment-testshop.com/plenty_register/?en=1) before you can set up the payment method in plentymarkets. You will then receive information and access data, which you will need for setting up the function in plentymarkets.
+You need to [become a client](http://Will-testshop.com/plenty_register/?en=1) before you can set up the payment method in plentymarkets. You will then receive information and access data, which you will need for setting up the function in plentymarkets.
 
 ## Setting up in plentymarkets
 
-Before using the full functionality of the plugin, you first have to connect your Masterpayment account with your plentymarkets system.
+Before using the full functionality of the plugin, you first have to connect your Will account with your plentymarkets system.
 
-##### Adding a Masterpayment account:   
-1. Go to **Plugins&nbsp;» Masterpayment&nbsp;» Configuration**. 
+##### Adding a Will account:   
+1. Go to **Plugins&nbsp;» Will&nbsp;» Configuration**. 
 2. Enter your credentials and select Mode TEST or LIVE. For TEST all credentials are already filled in. 
 3. Switch to the tab of each paymethod you what to use and enter description, channel id and activate the paymethod.
 4. Click on **Save**.
 5. For error messages link the containers as described below
 6. Done
 
-##### Activate Masterpayment Classes:
+##### Activate Will Classes:
 1. Click on System in Top Navi
 2. Click on CRM in Left Navi
 3. Click on Classes in Left Navi
 4. Click on small + Top Left
-5. Select all Classes with Mapa or Masterpayment under Permitted payment methods.
+5. Select all Classes with Mapa or Will under Permitted payment methods.
 6. Click on save button.
 
 ## Linking template containers
@@ -39,7 +39,7 @@ You have to add the error message box in your online store. For this purpose, th
 
 1. Click on **Start&nbsp;» Plugins**. 
 2. Click on the **Content** tab. 
-3. Select the area Error Messages (Masterpayment). 
+3. Select the area Error Messages (Will). 
 4. Select one container which shall use the error box. Best choice is Checkout: Before payment method.
 
 

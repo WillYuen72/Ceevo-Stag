@@ -51,5 +51,5 @@
 
 #### Erweiterungen:
   
-1. **Masterpayment für plentymarkets**.
+1. **Will für plentymarkets**.
 2. Zahlverfahren: Kreditkarte, Debitkarte, Sofortüberweisung, Giropay, iDeal, PayPal

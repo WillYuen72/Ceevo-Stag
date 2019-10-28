@@ -74,12 +74,12 @@ class WillPaymentMethodBase extends PaymentMethodService
          //->setReferenceValue($this)
         ->info('WillPaymentMethod', [
           'this' => $this,
-          'name_' => $this->configRepo->get('Masterpayment.name_'.strtolower($this->type)), 
-          'status_' => $this->configRepo->get('Masterpayment.status_'.strtolower($this->type)),
-          'channel_' => $this->configRepo->get('Masterpayment.channel_'.strtolower($this->type)),
+          'name_' => $this->configRepo->get('Will.name_'.strtolower($this->type)), 
+          'status_' => $this->configRepo->get('Will.status_'.strtolower($this->type)),
+          'channel_' => $this->configRepo->get('Will.channel_'.strtolower($this->type)),
         ]);
        */
-      if (!empty($this->configRepo->get('Masterpayment.status_'.strtolower($this->type)))) return true;
+      if (!empty($this->configRepo->get('Will.status_'.strtolower($this->type)))) return true;
       return false;
     }
 
@@ -90,7 +90,7 @@ class WillPaymentMethodBase extends PaymentMethodService
      */
     public function getName()
     {
-      $name = $this->configRepo->get('Masterpayment.name_'.strtolower($this->type));
+      $name = $this->configRepo->get('Will.name_'.strtolower($this->type));
       if(!strlen($name))
       {
           $name = 'Will '.strtoupper($this->type);
@@ -107,7 +107,7 @@ class WillPaymentMethodBase extends PaymentMethodService
     public function getIcon()
     {
           $app = pluginApp(Application::class);
-        $icon = $app->getUrlPath('masterpayment').'/images/'.$this->icons[$this->type];
+        $icon = $app->getUrlPath('Will').'/images/'.$this->icons[$this->type];
 
         return $icon;
     }
@@ -119,7 +119,7 @@ class WillPaymentMethodBase extends PaymentMethodService
      */
     public function getDescription()
     {
-        $desc = $this->configRepo->get('Masterpayment.desc_'.strtolower($this->type));
+        $desc = $this->configRepo->get('Will.desc_'.strtolower($this->type));
 
         return $desc;
     }

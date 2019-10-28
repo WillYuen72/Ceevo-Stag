@@ -106,7 +106,7 @@ class WillResponseController extends Controller
     
     public function checkoutSuccess()
     {
-      $sender = $this->config->get('Masterpayment.security_sender');
+      $sender = $this->config->get('Will.security_sender');
       $chksum = md5($_GET['trxid'].$_GET['uniqueid'].$sender);
       $this->getLogger('WillResponseController_checkoutSuccess')->info('data', ['get' => $_GET, 'sender' => $sender, 'chksum' => $chksum]);
       if ($_GET['chksum'] != $chksum){
@@ -135,7 +135,7 @@ class WillResponseController extends Controller
         if ($data['PROCESSING.RESULT'] != 'ACK'){
           return urldecode($data['CRITERION.FAILURL'].'?ps='.$data['PROCESSING.STATUS'].'&pr='.$data['PROCESSING.RETURN']);
         } else {
-          $sender = $this->config->get('Masterpayment.security_sender');
+          $sender = $this->config->get('Will.security_sender');
           $chksum = md5($data['IDENTIFICATION.SHORTID'].$data['IDENTIFICATION.UNIQUEID'].$sender);
           $params = '?trxid='.$data['IDENTIFICATION.SHORTID'].'&uniqueid='.$data['IDENTIFICATION.UNIQUEID'].'&chksum='.$chksum;
           return urldecode($data['CRITERION.SUCCESSURL']).$params;

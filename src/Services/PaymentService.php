@@ -181,10 +181,10 @@ class PaymentService
     private function getApiContextParams()
     {
         $apiContextParams = [];
-        $apiContextParams['SECURITY.SENDER'] = $this->config->get('Masterpayment.security_sender');
-        $apiContextParams['USER.LOGIN'] = $this->config->get('Masterpayment.user_login');
-        $apiContextParams['USER.PASSWORD'] = $this->config->get('Masterpayment.user_pwd');
-        $apiContextParams['TRANSACTION.MODE'] = $this->config->get('Masterpayment.environment');
+        $apiContextParams['SECURITY.SENDER'] = $this->config->get('Will.security_sender');
+        $apiContextParams['USER.LOGIN'] = $this->config->get('Will.user_login');
+        $apiContextParams['USER.PASSWORD'] = $this->config->get('Will.user_pwd');
+        $apiContextParams['TRANSACTION.MODE'] = $this->config->get('Will.environment');
         return $apiContextParams;
     }
     
@@ -261,7 +261,7 @@ class PaymentService
         //if ($requestParams['TRANSACTION.MODE'] != 'LIVE' && $amount <= 0) $amount = 10; // Testing
         $currency = $basket->currency;
         
-        $payMode = $this->config->get('Masterpayment.bookmode_'.$selectedPaymethod);
+        $payMode = $this->config->get('Will.bookmode_'.$selectedPaymethod);
         if (empty($payMode)) $payMode = 'DB';
         $payCode = substr(strtoupper($selectedPaymethod), 0, 2);
         
@@ -285,7 +285,7 @@ class PaymentService
           'SECURITY_SENDER'     => $requestParams['SECURITY.SENDER'],
           'USER_LOGIN'          => $requestParams['USER.LOGIN'],
           'USER_PWD'            => $requestParams['USER.PASSWORD'],
-          'TRANSACTION_CHANNEL' => $this->config->get('Masterpayment.channel_'.$selectedPaymethod),
+          'TRANSACTION_CHANNEL' => $this->config->get('Will.channel_'.$selectedPaymethod),
           'TRANSACTION_MODE'    => $requestParams['TRANSACTION.MODE'],
           'STYLE_URL'           => $domain.'/payment/Will/style',
           'RESPONSE_URL'        => $domain.'/payment/Will/response',

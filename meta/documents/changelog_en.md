@@ -50,5 +50,5 @@
 
 #### Features:
   
-1. **Masterpayment for plentymarkets**.
+1. **Will for plentymarkets**.
 2. Paymethods: Creditcard, Debitcard, Sofortbanking, Giropay, iDeal, PayPal
